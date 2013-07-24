@@ -1,0 +1,16 @@
+{
+  "name": "core",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "readmeFilename": "README.md",
+  "repository": "https://github.com/jamesjwood/core.git",
+  "author": "",
+  "license": "BSD",
+   "scripts": {
+    "test": "mocha test"
+  },
+  "dependencies": {
+    "utils": "git+ssh://git@github.com/jamesjwood/utils.git"
+  }
+}

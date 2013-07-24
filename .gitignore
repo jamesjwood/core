@@ -12,3 +12,13 @@ logs
 results
 
 npm-debug.log
+
+*.DS_Store
+*.dmg
+*.app
+
+node_modules/
+stage/
+lib-cov/
+bin/
+lib/
