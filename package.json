@@ -5,12 +5,20 @@
   "main": "index.js",
   "readmeFilename": "README.md",
   "repository": "https://github.com/jamesjwood/core.git",
-  "author": "",
+  "author": "James Wood <james.wood@datatransparency.com>",
   "license": "BSD",
-   "scripts": {
-    "test": "mocha test"
+  "scripts": {
+    "test": "grunt test"
   },
   "dependencies": {
     "utils": "git+ssh://git@github.com/jamesjwood/utils.git"
+  },
+  "devDependencies": {
+    "mocha": "1.7.3",
+    "grunt-simple-mocha": "0.4.0",
+    "grunt": "0.4.1",
+    "grunt-shell": "0.2.2",
+    "grunt-contrib": "0.7.0",
+    "sinon": "1.7.2"
   }
 }
