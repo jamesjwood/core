@@ -11,7 +11,8 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "utils": "git+ssh://git@github.com/jamesjwood/utils.git"
+    "utils": "git+ssh://git@github.com/jamesjwood/utils.git",
+    "async": "~0.2.9"
   },
   "devDependencies": {
     "mocha": "1.7.3",
@@ -19,6 +20,7 @@
     "grunt": "0.4.1",
     "grunt-shell": "0.2.2",
     "grunt-contrib": "0.7.0",
-    "sinon": "1.7.2"
+    "sinon": "1.7.2",
+    "browserify": "~2.29.1"
   }
 }

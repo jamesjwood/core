@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     watch: {
       options: {
         interrupt: true,
-      files: ['src/*.js', 'test/*.js'],
+      files: ['index.js', 'test.js'],
       tasks: ['test']
       }
     },
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         browser: true,
         node: true
       },
-      all: ['src/*.js', 'test/*.js']
+      all: ['index.js', 'test.js']
     },
     simplemocha: {
       options: {
@@ -22,6 +22,13 @@ module.exports = function(grunt) {
         reporter: 'tap'
       },
       all: { src: ['test.js'] }
+    },
+    karma: {
+      local: {
+        configFile: 'karma.conf.js',
+        singleRun: true,
+        browsers: ['Chrome'] //, 'Firefox', 'Safari', 'Opera'
+      }
     },
     shell: {
       makeStage: {
@@ -36,6 +43,12 @@ module.exports = function(grunt) {
         stdout: true,
         stderr: true,
         failOnError: true
+      },
+      browserify:{
+        command: 'node ./node_modules/browserify/bin/cmd.js  --debug -o ./stage/test.js -i domain -e ./test.js;',
+        stdout: true,
+        stderr: true,
+        failOnError: true
       }
     }
   });
@@ -44,6 +57,9 @@ grunt.loadNpmTasks('grunt-contrib');
 grunt.loadNpmTasks('grunt-shell');
 grunt.loadNpmTasks('grunt-simple-mocha');
 
-grunt.registerTask('test', ['jshint', 'simplemocha']);
+grunt.loadNpmTasks('grunt-karma');
+
+grunt.registerTask('default', ['jshint', 'simplemocha']);
+grunt.registerTask('test', ['default', 'shell:makeStage','shell:browserify', 'karma']);
 
 };
