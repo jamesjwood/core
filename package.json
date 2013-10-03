@@ -11,7 +11,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "utils": "git://github.com/jamesjwood/utils.git",
+    "utils": "git+ssh://git@github.com/jamesjwood/utils.git",
     "async": "~0.2.9"
   },
   "devDependencies": {
