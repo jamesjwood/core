@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "utils": "git://github.com/jamesjwood/utils.git",
-    "async": "~0.2.9"
+    "async": "0.2.x"
   },
   "devDependencies": {
     "mocha": "1.7.3",
