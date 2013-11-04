@@ -27,7 +27,7 @@ module.exports = function(grunt) {
       local: {
         configFile: 'karma.conf.js',
         singleRun: true,
-        browsers: ['Chrome'] //, 'Firefox', 'Safari', 'Opera'
+        browsers: ['Safari']
       }
     },
     shell: {
@@ -53,7 +53,8 @@ module.exports = function(grunt) {
     }
   });
 
-grunt.loadNpmTasks('grunt-contrib');
+grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-shell');
 grunt.loadNpmTasks('grunt-simple-mocha');
 
