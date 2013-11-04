@@ -8,7 +8,8 @@
   "author": "James Wood <james.wood@datatransparency.com>",
   "license": "BSD",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "link": "npm link utils;"
   },
   "dependencies": {
     "utils": "git://github.com/jamesjwood/utils.git",
