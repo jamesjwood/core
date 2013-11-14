@@ -12,6 +12,7 @@ module.exports = function(config) {
 		basePath : 'stage/',
 		files: [
 			'test.js'
-		]
+		],
+    port: 9875
 	});
 };

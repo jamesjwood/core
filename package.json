@@ -1,6 +1,6 @@
 {
     "name": "core",
-    "version": "0.0.0-36",
+    "version": "0.0.0-44",
     "description": "",
     "main": "index.js",
     "readmeFilename": "README.md",
@@ -9,14 +9,14 @@
     "license": "BSD",
     "scripts": {
         "test": "grunt test",
-        "link": "npm link getWatchers; npm link utils; npm link"
+        "link": "rm -R node_modules; npm link; npm link getWatchers; npm link utils;"
     },
     "dependencies": {
         "utils": "git://github.com/jamesjwood/utils.git",
         "async": "0.2.x"
     },
     "devDependencies": {
-        "getwatchers": "git://github.com/jamesjwood/getWatchers.git",
+        "getWatchers": "git://github.com/jamesjwood/getWatchers.git",
         "mocha": "1.14.x",
         "grunt-simple-mocha": "0.4.x",
         "grunt": "0.4.x",
