@@ -1,16 +1,25 @@
 var getWatchers = require('getWatchers');
+var pkg = require('./package.json');
 
 module.exports = function(grunt) {
   "use strict";
   // Project configuration.
   grunt.initConfig({
    watch: {
-      js: {
+      dependencies: {
         options: {
           debounceDelay: 5000,
           interrupt: true
         },
-        files: getWatchers(require('./package.json')),
+        files: getWatchers(pkg),
+        tasks: ['test']
+      },  
+      local: {
+        options: {
+          debounceDelay: 5000,
+          interrupt: true
+        },
+        files: ['*.js','src/**/*.js', 'test/**/*.js'],
         tasks: ['default']
       }
     },
@@ -71,7 +80,7 @@ module.exports = function(grunt) {
 
 require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-grunt.registerTask('default', ['jshint', 'bump']);
-grunt.registerTask('test', ['default', 'simplemocha', 'shell:makeStage','shell:browserify', 'karma']);
 
+grunt.registerTask('test', [ 'jshint','simplemocha', 'shell:makeStage','shell:browserify', 'karma']);
+grunt.registerTask('default', ['test', 'bump']);
 };
