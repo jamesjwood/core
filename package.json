@@ -1,34 +1,35 @@
 {
-    "name": "core",
-    "version": "0.0.0-51",
-    "description": "",
-    "main": "index.js",
-    "readmeFilename": "README.md",
-    "repository": "https://github.com/jamesjwood/core.git",
-    "author": "James Wood <james.wood@datatransparency.com>",
-    "license": "BSD",
-    "scripts": {
-        "test": "grunt test",
-        "link": "rm -R node_modules; npm link; npm link getWatchers; npm link utils;"
-    },
-    "dependencies": {
-        "utils": "git://github.com/jamesjwood/utils.git",
-        "async": "0.2.x"
-    },
-    "devDependencies": {
-        "getWatchers": "git://github.com/jamesjwood/getWatchers.git",
-        "mocha": "1.14.x",
-        "grunt-simple-mocha": "0.4.x",
-        "grunt": "0.4.x",
-        "grunt-shell": "0.5.x",
-        "sinon": "1.7.x",
-        "browserify": "2.35.x",
-        "grunt-karma": "0.6.x",
-        "grunt-contrib-jshint": "0.7.x",
-        "grunt-contrib-watch": "0.5.x",
-        "karma-mocha": "0.1.x",
-        "karma-safari-launcher": "0.1.x",
-        "grunt-bumpx": "~0.1.5",
-        "matchdep": "~0.3.0"
-    }
+  "name": "core",
+  "version": "0.0.0-53",
+  "description": "",
+  "main": "index.js",
+  "readmeFilename": "README.md",
+  "repository": "https://github.com/jamesjwood/core.git",
+  "author": "James Wood <james.wood@datatransparency.com>",
+  "license": "BSD",
+  "scripts": {
+    "test": "grunt test",
+    "link": "rm -R node_modules; npm link; npm link getWatchers; npm link utils;"
+  },
+  "dependencies": {
+    "utils": "git://github.com/jamesjwood/utils.git",
+    "async": "0.2.x"
+  },
+  "devDependencies": {
+    "getWatchers": "git://github.com/jamesjwood/getWatchers.git",
+    "mocha": "1.14.x",
+    "grunt-simple-mocha": "0.4.x",
+    "grunt": "0.4.x",
+    "grunt-shell": "0.5.x",
+    "sinon": "1.7.x",
+    "browserify": "2.35.x",
+    "grunt-karma": "0.6.x",
+    "grunt-contrib-jshint": "0.7.x",
+    "grunt-contrib-watch": "0.5.x",
+    "karma-mocha": "0.1.x",
+    "karma-safari-launcher": "0.1.x",
+    "grunt-bumpx": "~0.1.5",
+    "matchdep": "~0.3.0",
+    "grunt-bumpup": "~0.4.2"
+  }
 }

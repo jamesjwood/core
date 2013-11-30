@@ -26,7 +26,8 @@ if (typeof process.env.COVERAGE !== 'undefined') {
 
 describe('core', function () {
   'use strict';
-
+    
+  process.env.LOG = 'false';
 
   it('1: requireDefined: should throw error if property is undefined', function (done) {
     assert.throws(function () {

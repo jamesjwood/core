@@ -5,6 +5,15 @@ module.exports = function(grunt) {
   "use strict";
   // Project configuration.
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    bumpup: {
+      options: {
+        updateProps: {
+          pkg: 'package.json'
+        }
+      },
+      file: 'package.json'
+    },
    watch: {
       dependencies: {
         options: {
@@ -33,7 +42,7 @@ module.exports = function(grunt) {
     simplemocha: {
       options: {
         ui: 'bdd',
-        reporter: 'tap'
+        reporter: 'min'
       },
       all: { src: ['test.js'] }
     },
@@ -70,10 +79,6 @@ module.exports = function(grunt) {
           failOnError: true
         }
       }
-    },
-    bump: {
-        options: {},
-        files: [ 'package.json']
     }
   });
 
@@ -82,5 +87,6 @@ require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 
 grunt.registerTask('test', [ 'jshint','simplemocha', 'shell:makeStage','shell:browserify', 'karma']);
-grunt.registerTask('default', ['test', 'bump']);
+grunt.registerTask('development', ['bumpup:prerelease']);
+grunt.registerTask('production', ['bumpup:patch']);
 };
