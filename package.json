@@ -1,6 +1,6 @@
 {
   "name": "core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "readmeFilename": "README.md",
@@ -8,8 +8,9 @@
   "author": "James Wood <james.wood@datatransparency.com>",
   "license": "BSD",
   "scripts": {
+    "install": "grunt install",
     "test": "grunt test",
-    "link": "rm -R node_modules; npm link; npm link getWatchers; npm link utils;"
+    "link": "rm -R node_modules; npm link; npm link getWatchers; npm link utils; grunt install"
   },
   "dependencies": {
     "utils": "git://github.com/jamesjwood/utils.git",
@@ -19,7 +20,7 @@
     "mocha": "1.17.x",
     "grunt-simple-mocha": "0.4.x",
     "grunt": "0.4.x",
-    "grunt-shell": "0.6.x",
+    "grunt-shell": "0.5.x",
     "sinon": "1.7.x",
     "browserify": "3.20.x",
     "grunt-karma": "0.6.x",
@@ -29,6 +30,7 @@
     "karma-safari-launcher": "0.1.x",
     "grunt-bumpx": "~0.1.5",
     "matchdep": "~0.3.0",
-    "grunt-bumpup": "~0.5.0"
+    "grunt-bumpup": "~0.5.0",
+    "grunt-browserify": "~1.3.0"
   }
 }

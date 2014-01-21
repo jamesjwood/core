@@ -53,6 +53,17 @@ module.exports = function(grunt) {
         browsers: ['Safari']
       }
     },
+    browserify: {
+      test: {
+        files: {
+          './stage/test.js': ['./test.js'],
+        },
+        options: {
+          debug: true,
+          ignore: ['domain', 'loggly', 'ga']
+        },
+      }
+    },
     shell: {
       makeStage: {
         command: 'rm -rf stage; mkdir stage',
@@ -72,7 +83,7 @@ module.exports = function(grunt) {
         }
       },
       browserify:{
-        command: 'node ./node_modules/browserify/bin/cmd.js  --debug -o ./stage/test.js -i domain -e ./test.js;',
+        command: 'node ./node_modules/browserify/bin/cmd.js  --debug -o ./stage/test.js -i domain -e ./test.js',
         options:{
           stdout: true,
           stderr: true,
@@ -85,8 +96,8 @@ module.exports = function(grunt) {
 
 require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-
-grunt.registerTask('test', [ 'jshint','simplemocha', 'shell:makeStage','shell:browserify', 'karma']);
+grunt.registerTask('install', ['shell:makeStage']);
+grunt.registerTask('test', [ 'jshint','simplemocha','browserify', 'karma']);
 grunt.registerTask('development', ['bumpup:prerelease']);
 grunt.registerTask('production', ['bumpup:patch']);
 };
