@@ -14,8 +14,8 @@
 
 var assert = require('assert');
 var events = require('events');
-var utils = require('utils');
-var masterLog = utils.log().wrap('core');
+var utils = require('tsuju-utils');
+var masterLog = utils.log().wrap('tsuju-core');
 
 var lib = require('./index.js');
 

@@ -6,7 +6,7 @@
 
 var events = require('events');
 var listbroCore = exports;
-var utils = require('utils');
+var utils = require('tsuju-utils');
 
 var MODULE_NAME = 'core';
 

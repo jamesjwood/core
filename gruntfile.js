@@ -1,4 +1,3 @@
-var getWatchers = require('getWatchers');
 var pkg = require('./package.json');
 
 module.exports = function(grunt) {
@@ -15,14 +14,6 @@ module.exports = function(grunt) {
       file: 'package.json'
     },
    watch: {
-      dependencies: {
-        options: {
-          debounceDelay: 5000,
-          interrupt: true
-        },
-        files: getWatchers(pkg),
-        tasks: ['test']
-      },  
       local: {
         options: {
           debounceDelay: 5000,
@@ -89,6 +80,12 @@ module.exports = function(grunt) {
           stderr: true,
           failOnError: true
         }
+      },
+      publish:{
+        command: 'npm publish;',
+        stdout: true,
+        stderr: true,
+        failOnError: true
       }
     }
   });
@@ -100,4 +97,5 @@ grunt.registerTask('install', ['shell:makeStage']);
 grunt.registerTask('test', [ 'jshint','simplemocha','browserify', 'karma']);
 grunt.registerTask('development', []);
 grunt.registerTask('production', []);
+  grunt.registerTask('publish', ['bumpup:patch', 'shell:publish']);
 };
